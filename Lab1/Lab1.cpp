@@ -163,9 +163,10 @@ void func1(string s, int ct){
 }
 
 void func2(string s, int len){
-	int counter = 0;
-	while(counter < len + 1){
-		cout << s[counter + 1];
+	int counter = 1;
+	while(counter < len - 1){
+		cout << s[counter];
+		counter = counter + 2;
 	}
 }
 
