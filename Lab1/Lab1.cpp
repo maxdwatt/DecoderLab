@@ -171,8 +171,9 @@ void func2(string s, int len){
 }
 
 void func3(string s, int len){
-	for(int i = 0; i <len-1;i++){
+	for(int i = len-1; i>0;i--){
 		cout<<s[i];
+		i = i - 1;
 	}
 }
 
