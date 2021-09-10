@@ -178,12 +178,13 @@ void func3(string s, int len){
 }
 
 int func4(int arr[], int len){
+	int avg = 0;
 	int sum = 0;
-	for(int i = 0; i < len + 1; i++){
+	for(int i = 0; i < len; i++){
 		sum = sum + arr[i];
+		avg = sum/len;
 	}
-	int average = sum/len;
-	return average;
+	return avg;
 }
 
 int func5(int arr[], int val, int len){
