@@ -246,12 +246,17 @@ void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
 
 
 void func8(string s, int len, int arr[], int len2){
-	int sum = 0;
-	for(int i = 0; i < len2 + 1; i++){
-		sum = sum + arr[i];
-	}
-	int remainder = sum/len;
-	cout << arr[remainder];
+    int sum = 0;
+    int n = arr[len2-1];
+    int m = 0;
+    int r = 0;
+    while(n>0){
+      m = n%10;
+      sum = sum + m;
+      n = n/10;
+    }
+    r = sum%len;
+    cout << s[r];
 }
 
 void func9(string s9, int arr1[], int arr2[], int len1, int len2){
