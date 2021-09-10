@@ -188,17 +188,18 @@ int func4(int arr[], int len){
 }
 
 int func5(int arr[], int val, int len){
-	int closest = 10000;
-	int diff = 0;
-	for(int i = 0; i < len + 1; i++){
-		diff = abs(val - arr[i]);
-		if(diff < closest){
-			closest = diff;
+	int closest = 0;
+	int diff1 = 100;
+	int diff2 = 0;
+	for(int i = 0; i!=len;i++){
+		diff2 = abs(val-arr[i]);
+		if(diff2<diff1){
+			closest = i;
+			diff1 = diff2;
 		}
 	}
 	return closest;
 }
-
 void func6(int arr[], int ind, int len){
 	int small = 10000;
 	int smalldex;
