@@ -219,26 +219,29 @@ void func6(int arr[], int ind, int len){
 }
 
 void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
-    int left = 0;
-    int right = 0;
-    int leftdex = 0;
-    int rightdex = 0;
-    //to find the index of the left value
-    for(int i = 0; i!=len;i++){
-      if(arr[i]==i1){
-        right = arr[i];
-        rightdex = i;
-      }
-      if(arr[i] == i2){
-        left = arr[i];
-        leftdex = i;
-      }
+  int left = 0;
+  int right = 0;
+  int leftdex = 0;
+  int rightdex = 0;
+  //to find the index of the left value
+  for(int i = 0; i!=len;i++){
+    if(arr[i]==i1){
+      right = arr[i];
+      rightdex = i;
     }
-    //moving everything to thr right 
-    for(int k = rightdex; k > leftdex; k--){
-      arr[k] = arr[k-1];
+    if(arr[i] == i2){
+      left = arr[i];
+      leftdex = i;
     }
-    arr[rightdex] = arr[leftdex];
+  }
+  //moving everything to the right 
+  for(int k = rightdex; k > leftdex; k--){
+    arr[k] = arr[k-1];
+  }
+  arr[leftdex] = right;
+  for(int m = 0; m != len; m++){
+      cout<<s[arr[m]];
+  }
 }
 
 
