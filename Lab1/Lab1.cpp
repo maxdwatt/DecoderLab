@@ -219,12 +219,28 @@ void func6(int arr[], int ind, int len){
 }
 
 void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
-	int elem = arr[i2];
-	for(int i = len +1; i >=i1; i--){
-		arr[i] = arr[i-1];
-	}
-	arr[i1 -1] = elem;
+    int left = 0;
+    int right = 0;
+    int leftdex = 0;
+    int rightdex = 0;
+    //to find the index of the left value
+    for(int i = 0; i!=len;i++){
+      if(arr[i]==i1){
+        right = arr[i];
+        rightdex = i;
+      }
+      if(arr[i] == i2){
+        left = arr[i];
+        leftdex = i;
+      }
+    }
+    //moving everything to thr right 
+    for(int k = rightdex; k > leftdex; k--){
+      arr[k] = arr[k-1];
+    }
+    arr[rightdex] = arr[leftdex];
 }
+
 
 void func8(string s, int len, int arr[], int len2){
 	int sum = 0;
