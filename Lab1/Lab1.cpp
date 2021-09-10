@@ -219,7 +219,6 @@ void func6(int arr[], int ind, int len){
 }
 
 void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
-  int left = 0;
   int right = 0;
   int leftdex = 0;
   int rightdex = 0;
@@ -230,7 +229,6 @@ void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
       rightdex = i;
     }
     if(arr[i] == i2){
-      left = arr[i];
       leftdex = i;
     }
   }
@@ -239,9 +237,11 @@ void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
     arr[k] = arr[k-1];
   }
   arr[leftdex] = right;
-  for(int m = 0; m != len; m++){
+  if(do_pr==true){
+	  for(int m = 0; m != len; m++){
       cout<<s[arr[m]];
   }
+}
 }
 
 
