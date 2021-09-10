@@ -204,16 +204,11 @@ void func6(int arr[], int ind, int len){
 	int small = 10000;
 	int smalldex;
 	//finding the smallest value
-	for(int i = 0; i < len + 1; i++){
+	for(int i = 0; i != len; i++){
 		int holder = arr[i];
 		if(holder < small){
 			small = holder;
-		}
-	}
-	//finding the index of the smallest value
-	for(int j = 0; j < len + 1; j++){
-		if(arr[j] == small){
-			smalldex = j;
+			smalldex = i;
 		}
 	}
 	//replacing the values
