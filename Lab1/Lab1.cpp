@@ -260,21 +260,35 @@ void func8(string s, int len, int arr[], int len2){
 }
 
 void func9(string s9, int arr1[], int arr2[], int len1, int len2){
-	int len3 = len1 + len2;
-	int arr3[len3];
-	for(int i = 0; i < len1 +1; i++){
-		if(arr1[i] == arr2[i]){
-			arr3[i] = arr1[i];
-			arr3[i+1] = arr1[i];
-			i++;
-		}
-		else{
-			arr3[i] = arr1[i];
-		}
-	}
-	for(int j = 0; j < len3+1;j++){
-		cout<<s9[arr3[j]];
-	}
+    int len3 = len1 + len2;
+    int arr3[len3];
+    int endex = 0;
+    int temp = 0;
+    //adding arr1 in
+    for(int i = 0; i != len1; i++){
+      arr3[i] = arr1[i];
+      endex = i;
+    }
+    //adding arr2 in
+    for(int j = 0; j != len2; j++){
+      arr3[endex + j ] = arr2[j];
+    }
+    //sorting the array
+    for(int i=0; i<len3; i++){
+        for(int j=i; j<len3; j++){
+            //If there is a smaller element found on right of the array then swap it.
+            if(arr3[j] < arr3[i]){
+                temp = arr3[i];
+                arr3[i] = arr3[j];
+                arr3[j] = temp;
+            }
+        }
+    }   
+
+    //printing the string
+    for(int n = 0; n != len3; n++){
+      cout<<arr3[n];
+    }
 }
 
 void func10(string s10, int arr[], int len){
