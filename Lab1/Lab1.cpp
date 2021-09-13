@@ -337,24 +337,31 @@ void func11(string s7, int len, int msize){
 }
 
 void func12(string s, int len, int msize){
-	int mat[msize][msize];
-		int counter = 0;
-		int counter_2 = 0;
-		int counter_3 = 0;
-		int counter_4 = 0;
-		for(int i = 0; i<len-1;i++){
-			if(i > counter + msize){
-				mat[0][counter_2] = s[i];
-				counter = counter + msize;
-			}
-			else{
-				mat[counter_3+1][counter] = s[i];
-			}
-		}
-		for(int j=msize; j>-1;j--){
-			cout<<mat[counter_4+1][j];
-		}
+    char mat[msize][msize];
+    int x = 0; 
+    int y = 0;
+    int xp = 0;
+    int yp = msize-1;
+    int j = msize;
+    for(int i = 0; i != len; i++){
+      if(y == msize){
+        y = 0;
+        x = x + 1;
+        i--;
+    }
+    else{
+      mat[x][y] = s[i];
+      y = y+1;
+    }
+    }
+    while(j!= 0){
+      cout<<mat[xp][yp];
+      xp = xp + 1;
+      yp = yp - 1;
+      j = j - 1;
+    }
 }
+
 
 void func13(string s, int len, int msize){
 	int mat[msize][msize];
