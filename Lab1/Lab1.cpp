@@ -291,30 +291,24 @@ void func9(string s9, int arr1[], int arr2[], int len1, int len2){
     }
 }
 
-void func10(string s10, int arr[], int len){
-	int arr1[len];
-	bool unique[len];
-	for(int i = 0; i < len+1; i++){
-		unique[i] = true;
-	}
-	for(int j = 0; j < len+1; j++){
-		if(unique[j]==true){
-			for(int k = 0; k < len+1; k++){
-				if(arr[j] == arr[k]){
-					unique[k] = false;
-				}
-			}
-		}
-	}
-	for(int m = 0; m < len+1; m++){
-		if(unique[m] == true){
-			arr1[m] = arr[m];
-		}
-		else{
-			arr1[m-1] = arr[m];
-		}
-	}
-}
+ void func10(string s10, int arr[], int len){
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    while(i!=len){
+        for(j = 0; j != len; j++){
+            if(arr[i]==arr[j]){
+                for(k = j; k < len-1; ++k){
+                    arr[k] = arr[k+1];
+                }
+            }
+        }
+        i++;
+    }
+    for(int x = 0; x != 8; x++){
+        cout<<s10[arr[x]];
+    }
+ }
 
 void func11(string s7, int len, int msize){
 	int mat[msize][msize];
