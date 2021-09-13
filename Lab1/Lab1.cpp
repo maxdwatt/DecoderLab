@@ -362,35 +362,40 @@ void func12(string s, int len, int msize){
     }
 }
 
-
 void func13(string s, int len, int msize){
-	int mat[msize][msize];
-			int counter = 0;
-			int counter_2 = 0;
-			int counter_3 = 0;
-			int counter_4 = 0;
-			int counter_5 = 0;
-			int counter_6 = 0;
-			for(int i = 0; i<len-1;i++){
-				if(i > counter + msize){
-					mat[0][counter_2] = s[i];
-					counter = counter + msize;
-				}
-				else{
-					mat[counter_3+1][counter] = s[i];
-				}
-			}
-			for(int j=msize; j>-1;j--){
-				cout<<mat[counter_4+1][j];
-			}
-			for(int k=0; k<msize*msize;k++){
-				if(k == msize+counter_5){
-					cout<<mat[counter_6+1][k];
-				}
-				else{
-					cout<<mat[counter_6][k];
-				}
-			}
+    char mat[msize][msize];
+    int x = 0; 
+    int y = 0;
+    int xp = 0;
+    int yp = msize-1;
+    int j = msize;
+    int xt = 0;
+    int yt = 0;
+    for(int i = 0; i != len; i++){
+      if(y == msize){
+        y = 0;
+        x = x + 1;
+        i--;
+    }
+    else{
+      mat[x][y] = s[i];
+      y = y+1;
+    }
+    }
+    while(j!= 0){
+      cout<<mat[xp][yp];
+      xp = xp + 1;
+      yp = yp - 1;
+      j = j - 1;
+    }
+    while(xt != msize){
+      cout<<mat[yt][xt];
+      yt = yt + 1;
+      if(yt == msize - 1){
+        yt = 0;
+        xt = xt + 1;
+      }
+    }
 }
 
 
