@@ -160,6 +160,7 @@ void func1(string s, int ct){
 		cout<<s;
 		counter = counter+1;
 	}
+	cout<<endl;
 }
 
 void func2(string s, int len){
@@ -168,6 +169,7 @@ void func2(string s, int len){
 		cout << s[counter];
 		counter = counter + 2;
 	}
+	cout<<endl;
 }
 
 void func3(string s, int len){
@@ -215,7 +217,6 @@ void func6(int arr[], int ind, int len){
 	int temp = arr[ind];
 	arr[ind] = small;
 	arr[smalldex] = temp;
-
 }
 
 void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
@@ -242,6 +243,7 @@ void func7(string s, int arr[], int len, int i1, int i2, bool do_pr){
       cout<<s[arr[m]];
   }
 }
+  cout<<endl;
 }
 
 
@@ -287,8 +289,9 @@ void func9(string s9, int arr1[], int arr2[], int len1, int len2){
 
     //printing the string
     for(int n = 0; n != len3; n++){
-      cout<<arr3[n];
+      cout<<s9[arr3[n]];
     }
+    cout<<endl;
 }
 
  void func10(string s10, int arr[], int len){
@@ -308,6 +311,7 @@ void func9(string s9, int arr1[], int arr2[], int len1, int len2){
     for(int x = 0; x != 8; x++){
         cout<<s10[arr[x]];
     }
+    cout<<endl;
  }
 
 void func11(string s7, int len, int msize){
@@ -334,6 +338,7 @@ void func11(string s7, int len, int msize){
       yp = yp + 1;
       j = j + 1;
     }
+    cout<<endl;
 }
 
 void func12(string s, int len, int msize){
@@ -360,6 +365,7 @@ void func12(string s, int len, int msize){
       yp = yp - 1;
       j = j - 1;
     }
+    cout<<endl;
 }
 
 void func13(string s, int len, int msize){
